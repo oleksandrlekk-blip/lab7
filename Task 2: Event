@@ -1,0 +1,10 @@
+class BankTerminal
+{
+    public event Action<int> OnMoneyWithdraw;
+
+    public void Withdraw(int amount)
+    {
+        Console.WriteLine($"Сума зняття: {amount}");
+        OnMoneyWithdraw?.Invoke(amount);
+    }
+}
