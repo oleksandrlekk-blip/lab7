@@ -1,0 +1,11 @@
+Func<double, double>[] discounts = new Func<double, double>[]
+{
+    price => price * 0.95,
+    price => price * 0.90,
+    price => price - 100
+};
+
+double price = 1000;
+foreach (var discount in discounts) price = discount(price);
+
+Console.WriteLine(price); // 755
